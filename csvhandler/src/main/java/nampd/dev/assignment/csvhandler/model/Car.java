@@ -1,6 +1,5 @@
 package nampd.dev.assignment.csvhandler.model;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,16 +15,19 @@ import nampd.dev.assignment.csvhandler.validator.CsvColumn;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person {
+public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @CsvColumn(column = "Id")
-    private Long id;
+    @CsvColumn(column = "Code")
+    private Long code;
 
-    @CsvColumn(column = "Name")
-    private String name;
+    @CsvColumn(column = "Brand")
+    private String brand;
 
-    @CsvColumn(column = "Phone_Number")
-    private String phoneNumber;
+    @CsvColumn(column = "Model")
+    private int model;
+
+    @CsvColumn(column = "Color")
+    private String color;
 }

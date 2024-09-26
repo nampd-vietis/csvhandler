@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME) // Giữ annotation trong runtime
 @Target(ElementType.FIELD) // Áp dụng cho các trường (fields)
-public @interface CSVColumn {
-    String name();
+public @interface CsvColumn {
+    String column();
     boolean required() default false;
 }
