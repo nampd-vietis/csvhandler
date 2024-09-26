@@ -12,7 +12,7 @@
     <form id="importForm" method="post" action="#" th:action="@{/api/v1/csv/import/{dataType}(dataType=${importType})}" enctype="multipart/form-data">
         <label for="importType">Select type to import:</label>
         <select name="dataType" id="importType" required onchange="updateImportAction()">
-            <option value="person">Person</option>
+            <option value="book">Book</option>
             <option value="car">Car</option>
             <option value="film">Film</option>
         </select>
@@ -38,7 +38,7 @@
     <form action="#" th:action="@{/api/v1/csv/export}" method="get">
         <label for="exportType">Select type to export:</label>
         <select name="type" id="exportType" required>
-            <option value="person">Person</option>
+            <option value="book">Book</option>
             <option value="car">Car</option>
             <option value="film">Film</option>
         </select>

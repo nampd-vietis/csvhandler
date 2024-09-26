@@ -1,20 +1,18 @@
 package nampd.dev.assignment.csvhandler.service;
 
 import jakarta.servlet.http.HttpServletResponse;
+import nampd.dev.assignment.csvhandler.model.Book;
 import nampd.dev.assignment.csvhandler.model.Car;
 import nampd.dev.assignment.csvhandler.model.Film;
-import nampd.dev.assignment.csvhandler.model.Person;
+import nampd.dev.assignment.csvhandler.repository.BookRepository;
 import nampd.dev.assignment.csvhandler.repository.CarRepository;
 import nampd.dev.assignment.csvhandler.repository.FilmRepository;
-import nampd.dev.assignment.csvhandler.repository.PersonRepository;
 import nampd.dev.assignment.csvhandler.validator.CsvColumn;
 import org.springframework.stereotype.Service;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,12 +20,12 @@ import java.util.List;
 public class CsvExportService {
 
     private final CarRepository carRepository;
-    private final PersonRepository personRepository;
+    private final BookRepository bookRepository;
     private final FilmRepository filmRepository;
 
-    public CsvExportService(CarRepository carRepository, PersonRepository personRepository, FilmRepository filmRepository) {
+    public CsvExportService(CarRepository carRepository, BookRepository bookRepository, FilmRepository filmRepository) {
         this.carRepository = carRepository;
-        this.personRepository = personRepository;
+        this.bookRepository = bookRepository;
         this.filmRepository = filmRepository;
     }
 
@@ -70,8 +68,8 @@ public class CsvExportService {
             return carRepository.findAll();
         } else if (clazz == Film.class) {
             return filmRepository.findAll();
-        } else if (clazz == Person.class) {
-            return personRepository.findAll();
+        } else if (clazz == Book.class) {
+            return bookRepository.findAll();
         }
         return Collections.emptyList();
     }

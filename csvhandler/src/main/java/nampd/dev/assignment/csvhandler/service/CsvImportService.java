@@ -7,7 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
@@ -40,6 +39,7 @@ public class CsvImportService {
                         }
                     }
                 }
+                System.out.println("Save: " + instance);
                 resultSet.add(instance);
                 saveData(instance, repository);
             }
