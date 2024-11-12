@@ -11,3 +11,4 @@ public @interface CsvColumn {
     String column();
     boolean required() default false;
 }
+

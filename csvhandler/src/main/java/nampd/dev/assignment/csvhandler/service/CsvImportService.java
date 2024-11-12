@@ -26,7 +26,7 @@ public class CsvImportService {
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(",");
 
-                //dùng reflection tạo một instance của class kiểu T
+                //dùng reflection tạo một instance của class
                 T instance = clazz.getDeclaredConstructor().newInstance();
 
                 for (Field field : clazz.getDeclaredFields()) {
